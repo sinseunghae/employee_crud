@@ -49,10 +49,12 @@ def update(id):
             db.session.commit()
 
             name = request.form['name']
-            age = request.form['age']
             position = request.form['position']
-            employee = EmployeeModel(employee_id=id, name=name, age=age, position = position)
-
+            email = request.form['email']
+            starting_date = request.form['starting_date']
+            ending_date = request.form['ending_date']
+            employee = EmployeeModel(employee_id=id, name=name, position=position, email=email, starting_date=starting_date, ending_date=ending_date)
+        
             db.session.add(employee)
             db.session.commit()
             return redirect(f'/data/{id}')
