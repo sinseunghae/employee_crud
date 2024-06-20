@@ -22,13 +22,16 @@
         <title>{% block title %}Edit Employee{% endblock %}</title><form action='' method = "POST">
     </head>
     <body>
+        
         <p style="margin:5px;">Name <input type = "text" name = "name" id="name" value="{{employee.name}}"/></p>
         <p style="margin:5px;"> Position
             <select name="position" id="position" placeholder="Position" class="form-control" value="{{employee.position}}">
-                <option value="IT Consultant"> IT Consultant/Intern </option>
-                <option value="Supervisior"> Supervisior </option>
-                <option value="Scrum Master"> Scrum Master </option>
-                <option value="Human Resource"> Human Resource </option>
+                <option value="IT Consultant"> IT Consultant</option> 
+                <option value="IT Intern"> IT Intern </option> 
+                <option value="Contractor"> Contractor </option> 
+                <option value="Manager"> Manager </option> 
+                <option value="Scrum Master"> Scrum Master </option> 
+                <option value="Human Resource"> Human Resource </option> 
             </select>
         </p>
         <p style="margin:5px;">Email <input type="email" name="email"  id="email" value="{{employee.email}}"/></p>

@@ -22,50 +22,42 @@
         <title>{% block title %}Home{% endblock %}</title>
     </head>
     <body>
-        <div align="left" style="margin: 5px;"> 
-            <a href="time_tracking/data" class="btn btn-primary">Timesheet</a>
+        <h3> Timesheet </h3>
+
+        <div align="right" style="margin: 5px;"> 
+            <a href="/data" class="btn btn-primary">Back</a>
         </div>
 
-        <h1 align="center"> Employees </h1>
-        <div align="right" style="margin: 5px;"> 
-            <a href="data/create" class="btn btn-primary">Add</a>
-        </div>
         <table class="table">
             <thead class="thead-dark">
-                <th> Rank </th>
-                <th> ID </th>
                 <th> Name </th>
-                <th> Job Position </th>
-                <th> Email </th>
-                <th> Starting Date </th>
-                <th> Ending date </th>
+                <th> Type </th>
+                <th> Regular </th>
+                <th> Overtime </th>
+                <th> CDO </th>
+                <th> Paid Holiday </th>
+                <th> Total Hours </th>
+                <th> Approval </th>
                 <th> Action </th>
             </thead> 
             <tbody>
                 <tr>
                     {% for employee in employees %}
 
-                        <td> {{ rank }} </td>
-                        <td> {{employee.employee_id}} </td>
                         <td> {{employee.name}} </td>
                         <td> {{employee.position}} </td>
-                        <td> {{employee.email}} </td>
-                        <td> {{employee.starting_date}} </td>
-                        <td> {{employee.ending_date}} </td>
+                        <td> {{regular}} </td>
+                        <td> {{overtime}} </td>
+                        <td> {{cdo}} </td>
+                        <td> {{paid_holiday}} </td>
+                        <td> {{total_hours}} </td>
+                        <td> {{approval}} </td>
                         
-                    
                     <td>
                         <div class="btn-group">
                             <a type="button" class="close" href="data/{{employee.employee_id}}" style="margin-right: 5px;"> 
-                                <i class="bi bi-person-circle"></i>
+                                <i class="bi bi-eye"></i>
                             </a> 
-                            <a type="button" class="close" href="data/{{employee.employee_id}}/update" style="margin-right: 5px;"> 
-                                <i class="bi bi-pencil-square"></i>
-                            </a> 
-                            <a type="button" class="close" href="data/{{employee.employee_id}}/delete" style="margin-right: 5px;"> 
-                                <i class="bi bi-x-circle"></i>
-                            </a> 
-                            
                         </div>
                     </td>
                 </tr>

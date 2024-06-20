@@ -74,6 +74,18 @@ def delete(id):
 
     return render_template('delete.html')
 
+@app.route('/time_tracking/data')
+def RetrieveTimesheet():
+    employees = EmployeeModel.query.all()
+    return render_template('time_tracking/datalist.html',employees = employees)
+
+@app.route('/time_tracking/data/<string:id>')
+def RetrieveSingleTimesheet(id):
+    employee = EmployeeModel.query.filter_by(employee_id=id).first()
+    if employee:
+        return render_template('time_tracking/data.html', employee = employee)
+    return f"Employee with id ={id} Doenst exist"
+
 if __name__ == '__main__':
     app.debug = True
     app.run()
