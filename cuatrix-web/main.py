@@ -38,7 +38,7 @@ def RetrieveSingleEmployee(id):
     employee = EmployeeModel.query.filter_by(employee_id=id).first()
     if employee:
         return render_template('data.html', employee = employee)
-    return f"Employee with id ={id} Doenst exist"
+    return f"Employee with id ={id} Doesnt exist"
 
 @app.route('/data/<string:id>/update',methods = ['GET','POST'])
 def update(id):
